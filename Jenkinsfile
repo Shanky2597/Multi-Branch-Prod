@@ -57,7 +57,7 @@ pipeline {
 
                     sed -i.bak "s|image:.*|image: ${IMAGE_NAME}:${IMAGE_TAG}|" k8s/deployment.yaml
 
-                    git add k8s/deployment.yml
+                    git add k8s/deployment.yaml
                     git diff --cached --quiet || git commit -m "Updated image to ${IMAGE_TAG}"
 
                     set +x
